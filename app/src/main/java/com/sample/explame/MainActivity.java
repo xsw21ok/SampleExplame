@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
 							viewParent.removeView(mMaskHighLightView);
 						}
 					});
-					FrameLayout.LayoutParams targetViewParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
+					FrameLayout.LayoutParams hintViewParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
 							FrameLayout.LayoutParams.WRAP_CONTENT);
-					targetViewParams.topMargin = getStatusBarHeight(getApplicationContext()) + 200;
+					hintViewParams.topMargin = getStatusBarHeight(getApplicationContext()) + 200;
 					int padding = 40;
 					float radius = 40f;
 					mMaskHighLightView = new MaskHighLightView.Builder(getApplicationContext())
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
 							.setRadius(radius)
 							.setTargetView(findViewById(R.id.tv_hello))
 							.setHintView(hintView)
+							.setHintViewLayoutParams(hintViewParams)
 							.setMaskRange(width, height)
-							.setTargetViewLayoutParams(targetViewParams)
 							.create();
 					mMaskHighLightView.show();
 					viewParent.addView(mMaskHighLightView);

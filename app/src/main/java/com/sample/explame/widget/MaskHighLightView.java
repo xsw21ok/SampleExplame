@@ -67,7 +67,7 @@ public class MaskHighLightView extends FrameLayout {
 				targetViewLocation[1] - mMaskViewParams.mTargetViewPaddingTop,
 				targetViewLocation[0] + targetViewWidth + mMaskViewParams.mTargetViewPaddingRight,
 				targetViewLocation[1] + targetViewHeight + mMaskViewParams.mTargetViewPaddingBottom);
-		addView(mMaskViewParams.mHintView, mMaskViewParams.mTargetViewLayoutParams);
+		addView(mMaskViewParams.mHintView, mMaskViewParams.mHintViewLayoutParams);
 
 	}
 
@@ -111,7 +111,7 @@ public class MaskHighLightView extends FrameLayout {
 		private static class MaskViewParams {
 			View mTargetView;
 			View mHintView;
-			FrameLayout.LayoutParams mTargetViewLayoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
+			FrameLayout.LayoutParams mHintViewLayoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
 					FrameLayout.LayoutParams.WRAP_CONTENT);
 			int mTargetViewPaddingLeft;
 			int mTargetViewPaddingTop;
@@ -145,8 +145,8 @@ public class MaskHighLightView extends FrameLayout {
 			return this;
 		}
 
-		public Builder setTargetViewLayoutParams(FrameLayout.LayoutParams params) {
-			mParams.mTargetViewLayoutParams = params;
+		public Builder setHintViewLayoutParams(FrameLayout.LayoutParams params) {
+			mParams.mHintViewLayoutParams = params;
 			return this;
 		}
 
